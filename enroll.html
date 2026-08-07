@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temperature Alert SMS Enrollment | MarrGwen.com</title>
+<style>
+:root {
+  --ink: #1f2937;
+  --muted: #5f6b7a;
+  --accent: #9b2c2c;
+  --accent-dark: #742323;
+  --panel: #fff8f3;
+  --border: #d8dee7;
+  --background: #f7f8fa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--background);
+}
+header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+.header-inner, main, footer {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+}
+.header-inner {
+  padding: 22px 0;
+}
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+nav {
+  margin-top: 12px;
+}
+nav a {
+  display: inline-block;
+  margin: 0 18px 6px 0;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+nav a:hover, nav a:focus { text-decoration: underline; }
+main {
+  background: #fff;
+  margin-top: 28px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04);
+}
+h1 { line-height: 1.2; margin-top: 0; }
+h2 { margin-top: 30px; }
+a { color: var(--accent); }
+.notice {
+  padding: 18px;
+  border-left: 5px solid var(--accent);
+  background: var(--panel);
+  margin: 22px 0;
+}
+.button {
+  display: inline-block;
+  padding: 13px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover, .button:focus { background: var(--accent-dark); }
+label {
+  display: block;
+  font-weight: 700;
+  margin-top: 18px;
+}
+input[type="text"], input[type="tel"], input[type="email"] {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border: 1px solid #aeb7c3;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.consent-box {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 26px 0 12px;
+  padding: 20px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.consent-box input {
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+.consent-box label {
+  margin: 0;
+  font-size: 1.12rem;
+}
+.disclosure {
+  color: var(--muted);
+  font-size: .96rem;
+}
+.status {
+  margin-top: 14px;
+  font-weight: 700;
+}
+footer {
+  padding: 28px 0 40px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+footer a { margin-right: 16px; }
+@media (max-width: 600px) {
+  main { padding: 24px 20px; }
+  nav a { display: block; margin-bottom: 8px; }
+}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <p class="site-title"><strong>MarrGwen Temperature Alerts</strong></p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="enroll.html">Enroll</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="sms-terms.html">SMS Terms</a>
+      <a href="unsubscribe.html">Unsubscribe</a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<h1>Temperature Alert SMS Enrollment</h1>
+<p>Complete the fields below to request enrollment in the MarrGwen automated SMS messaging system for high-temperature alerts.</p>
+
+<form id="enrollmentForm" novalidate>
+  <label for="fullName">Full name</label>
+  <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+
+  <label for="phone">Mobile phone number</label>
+  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Example: 312-555-1234" required>
+
+  <label for="email">Your email address</label>
+  <input type="email" id="email" name="email" autocomplete="email" required>
+
+  <div class="consent-box">
+    <input type="checkbox" id="consent" name="consent" required>
+    <label for="consent">
+      Please enroll me in the automated SMS messaging system for high-temperature alerts.
+    </label>
+  </div>
+
+  <p class="disclosure">
+    By checking the box, I expressly consent to receive automated informational SMS messages from MarrGwen concerning high-temperature conditions at the monitored property. Message frequency varies depending on temperature conditions. Message and data rates may apply. Reply STOP to cancel messages. Reply HELP for assistance. Consent is voluntary and is not a condition of purchasing any product or service.
+  </p>
+
+  <p class="disclosure">
+    I have reviewed the <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and
+    <a href="sms-terms.html" target="_blank" rel="noopener">SMS Terms and Conditions</a>.
+  </p>
+
+  <button class="button" type="submit">Email My Enrollment Request</button>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+</form>
+
+<noscript>
+  <div class="notice">
+    JavaScript is required for the enrollment button. You may instead email
+    <a href="mailto:Stuart@MarrGwen.com?subject=Temperature%20Alert%20SMS%20Enrollment">Stuart@MarrGwen.com</a>
+    and state your full name, mobile number, and explicit agreement to receive automated high-temperature SMS alerts.
+  </div>
+</noscript>
+
+</main>
+<footer>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="sms-terms.html">SMS Terms &amp; Conditions</a>
+  <a href="terms.html">Terms of Service</a>
+  <p>Questions: <a href="mailto:Stuart@MarrGwen.com">Stuart@MarrGwen.com</a></p>
+  <p>&copy; 2026 MarrGwen.com. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById('enrollmentForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const name = document.getElementById('fullName').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const consent = document.getElementById('consent').checked;
+  const status = document.getElementById('status');
+
+  if (!name || !phone || !email) {
+    status.textContent = 'Please enter your full name, mobile phone number, and email address.';
+    return;
+  }
+
+  if (!consent) {
+    status.textContent = 'You must actively check the enrollment consent box before continuing.';
+    return;
+  }
+
+  const subject = 'Temperature Alert SMS Enrollment Request';
+  const body = [
+    'I request enrollment in the MarrGwen automated SMS messaging system for high-temperature alerts.',
+    '',
+    'Full name: ' + name,
+    'Mobile phone number: ' + phone,
+    'Email address: ' + email,
+    '',
+    'Consent statement:',
+    'I expressly consent to receive automated informational SMS messages from MarrGwen concerning high-temperature conditions at the monitored property. Message frequency varies. Message and data rates may apply. Reply STOP to cancel and HELP for assistance.',
+    '',
+    'I understand that consent is voluntary and is not a condition of purchasing any product or service.',
+    '',
+    'Date submitted: ' + new Date().toLocaleString()
+  ].join('\r\n');
+
+  const mailto = 'mailto:Stuart@MarrGwen.com'
+    + '?subject=' + encodeURIComponent(subject)
+    + '&body=' + encodeURIComponent(body);
+
+  status.textContent = 'Your email program should now open. Send the prepared email to complete your request.';
+  window.location.href = mailto;
+});
+</script>
+
+</body>
+</html>
